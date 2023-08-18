@@ -25,13 +25,12 @@ class Auto:
                 numAsientos += 1
         return numAsientos
 
-
-
     def verificarIntegridad(self):
         if (self.registro == self.motor.registro):
             for i in range(0,len(self.asientos)):
-                if (self.registro != self.asientos[i].registro):
-                    return "Las piezas no son originales"
+                if (self.asientos[i] != None):
+                    if (self.registro != self.asientos[i].registro):
+                        return "Las piezas no son originales"
             return "Auto original"
         else:
             return "Las piezas no son originales"
@@ -48,6 +47,3 @@ class Motor:
     def asignarTipo(self, tipo):
         if (tipo == "electrico" or tipo == "gasolina"):
             self.tipo = tipo
-
-
-
